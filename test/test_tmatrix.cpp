@@ -140,7 +140,7 @@ TEST(TDynamicMatrix, can_add_matrices_with_equal_size)
 
     TDynamicMatrix<int> result = m1 + m2;
     EXPECT_EQ(result[0][0], 0);
-    EXPECT_EQ(result[2][2], 8);
+    EXPECT_EQ(result[2][2], 16);
 }
 
 TEST(TDynamicMatrix, cant_add_matrices_with_not_equal_size)
@@ -169,19 +169,19 @@ TEST(TDynamicMatrix, cant_subtract_matrixes_with_not_equal_size)
     ASSERT_ANY_THROW(m1 - m2);
 }
 
-TEST(TDynamicMatrix, can_multiply_matrices_with_equal_size) 
+TEST(TDynamicMatrix, can_multiply_matrices_with_equal_size)
 {
     TDynamicMatrix<int> m1(3), m2(3);
     for (int i = 0; i < 3; ++i)
-        for (int j = 0; j < 3; ++j) 
+        for (int j = 0; j < 3; ++j)
         {
             m1[i][j] = i + j;
             m2[i][j] = i + j;
         }
 
     TDynamicMatrix<int> result = m1 * m2;
-    EXPECT_EQ(result[0][0], 0);
-    EXPECT_EQ(result[2][2], 12);
+    EXPECT_EQ(result[0][0], 5);
+    EXPECT_EQ(result[2][2], 29);
 }
 
 TEST(TDynamicMatrix, cant_multiply_matrices_with_not_equal_size) {

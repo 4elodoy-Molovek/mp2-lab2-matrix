@@ -196,7 +196,8 @@ TEST(TDynamicVector, cant_subtract_vectors_with_not_equal_size)
 TEST(TDynamicVector, can_multiply_vectors_with_equal_size)
 {
 	TDynamicVector<int> v1(3), v2(3);
-	for (int i = 0; i < 3; ++i) {
+	for (int i = 0; i < 3; ++i) 
+	{
 		v1[i] = i;
 		v2[i] = i;
 	}
